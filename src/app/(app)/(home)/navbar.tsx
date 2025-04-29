@@ -24,7 +24,7 @@ type NavbarItemProps = {
 
 const NavbarItem = ({ children, href, isActive }: NavbarItemProps) => {
 	return (
-		<Button asChild variant={isActive ? "default" : "outline"}>
+		<Button asChild variant={isActive ? "default" : "outline"} className={cn(isActive || "shadow-none border-transparent hover:border-primary")}>
 			<Link href={href}>{children}</Link>
 		</Button>
 	);
@@ -38,11 +38,10 @@ const navbarItems = [
 	{ href: "/contact", children: "Contact" },
 ];
 
-type Props = {};
-
-export const Navbar = (props: Props) => {
+export const Navbar = () => {
 	const pathname = usePathname();
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
 	return (
 		<div className="h-20 flex px-6 border-b justify-between font-medium bg-white">
 			<Link href="/" className="flex items-center">
@@ -67,7 +66,7 @@ export const Navbar = (props: Props) => {
 				))}
 			</div>
 
-			<div className="hidden lg:flex">
+			<div className="hidden lg:flex -mr-6">
 				<Button
 					asChild
 					variant="secondary"
