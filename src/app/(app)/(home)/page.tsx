@@ -1,33 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import { Progress } from "@/components/ui/progress";
-import { Textarea } from "@/components/ui/textarea";
-
-function Page() {
-	return (
-		<div className="p-4">
-			<div className="flex flex-col gap-y-4">
-				<div>
-					<Button>I'm a button</Button>
-				</div>
-
-				<div>
-					<Input placeholder="I'm an input" />
-				</div>
-				<div>
-					<Progress value={50} />
-				</div>
-
-				<div>
-					<Textarea placeholder={"123"} />
-				</div>
-
-				<div>
-					<Checkbox />
-				</div>
-			</div>
-		</div>
-	);
+async function Page() {
+  return <div>home page</div>;
 }
-export default Page
+export default Page;

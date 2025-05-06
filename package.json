@@ -2,11 +2,15 @@
   "name": "multitenant-ecommerce",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:types": "payload generate:types",
+    "db:fresh": "payload migrate:fresh",
+    "db:seed": "bun run ./src/seed.ts"
   },
   "dependencies": {
     "@payloadcms/db-mongodb": "^3.35.1",
@@ -15,10 +19,16 @@
     "@payloadcms/richtext-lexical": "^3.35.1",
     "@radix-ui/react-checkbox": "^1.2.3",
     "@radix-ui/react-dialog": "^1.1.11",
+    "@radix-ui/react-dropdown-menu": "^2.1.12",
     "@radix-ui/react-progress": "^1.1.4",
     "@radix-ui/react-scroll-area": "^1.2.6",
     "@radix-ui/react-slot": "^1.2.0",
+    "@tanstack/react-query": "^5.75.2",
+    "@trpc/client": "^11.1.2",
+    "@trpc/server": "^11.1.2",
+    "@trpc/tanstack-react-query": "^11.1.2",
     "class-variance-authority": "^0.7.1",
+    "client-only": "^0.0.1",
     "clsx": "^2.1.1",
     "graphql": "^16.8.1",
     "lucide-react": "^0.503.0",
@@ -26,7 +36,10 @@
     "payload": "^3.35.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.2.0"
+    "server-only": "^0.0.1",
+    "superjson": "^2.2.2",
+    "tailwind-merge": "^3.2.0",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

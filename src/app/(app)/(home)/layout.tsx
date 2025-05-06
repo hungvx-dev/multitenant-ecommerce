@@ -1,18 +1,25 @@
+import { HydrateClient, prefetch, trpc } from "@/trpc/server";
 import { Footer } from "./footer";
 import { Navbar } from "./navbar";
+import SearchFilters from "./search-filters";
 
 type Props = {
-	children: React.ReactNode;
+  children: React.ReactNode;
 };
 
-function Layout({ children }: Props) {
-	return (
-		<div className="flex flex-col min-h-screen">
-			<Navbar />
-			<div className="flex-1 bg-[#f4f4f0]">{children}</div>
+async function Layout({ children }: Props) {
+  prefetch(trpc.categories.getMany.queryOptions());
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <HydrateClient>
+        <SearchFilters />
+      </HydrateClient>
+      <div className="flex-1 bg-[#f4f4f0]">{children}</div>
       <Footer />
-		</div>
-	);
+    </div>
+  );
 }
 
 export default Layout;
