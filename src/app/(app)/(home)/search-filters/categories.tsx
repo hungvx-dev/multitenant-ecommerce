@@ -1,7 +1,10 @@
 "use client";
+
 import { useState } from "react";
-import CategoryDropdown from "./category-dropdown";
+
 import type { CategoriesGetMany } from "@/modules/categories/server/types";
+
+import CategoryDropdown from "./category-dropdown";
 
 type Props = {
   data: CategoriesGetMany;

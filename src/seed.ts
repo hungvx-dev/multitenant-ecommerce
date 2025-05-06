@@ -163,4 +163,4 @@ const seed = async () => {
 
 await seed();
 
-process.exit(0)
+process.exit(0);
