@@ -1,5 +1,4 @@
 import { cache } from "react";
-
 import config from "@payload-config";
 import { initTRPC } from "@trpc/server";
 import { getPayload } from "payload";

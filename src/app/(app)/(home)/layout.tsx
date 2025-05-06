@@ -1,5 +1,4 @@
 import { HydrateClient, prefetch, trpc } from "@/trpc/server";
-
 import { Footer } from "./footer";
 import { Navbar } from "./navbar";
 import SearchFilters from "./search-filters";

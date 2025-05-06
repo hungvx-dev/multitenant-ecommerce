@@ -3,7 +3,6 @@
 import { useState } from "react";
 
 import type { CategoriesGetMany } from "@/modules/categories/server/types";
-
 import CategoryDropdown from "./category-dropdown";
 
 type Props = {
