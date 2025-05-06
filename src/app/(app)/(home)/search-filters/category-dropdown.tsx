@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState } from 'react';
+import Link from 'next/link';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import type { CategoriesGetMany } from "@/modules/categories/server/types";
+} from '@/components/ui/dropdown-menu';
+import type { CategoriesGetMany } from '@/modules/categories/server/types';
 
 type Props = {
   category: CategoriesGetMany[1];
@@ -25,7 +25,7 @@ const CategoryDropdown = ({ category, isActive }: Props) => {
       {category.subcategories?.length ? (
         <DropdownMenu onOpenChange={setIsOpen} modal={false}>
           <DropdownMenuTrigger asChild>
-            <Button variant={isActive ? "outline" : isOpen ? "secondary" : "ghost"}>
+            <Button variant={isActive ? 'outline' : isOpen ? 'secondary' : 'ghost'}>
               {category.name}
             </Button>
           </DropdownMenuTrigger>
@@ -40,7 +40,7 @@ const CategoryDropdown = ({ category, isActive }: Props) => {
           </DropdownMenuContent>
         </DropdownMenu>
       ) : (
-        <Button variant={isActive ? "outline" : "ghost"}>{category.name}</Button>
+        <Button variant={isActive ? 'outline' : 'ghost'}>{category.name}</Button>
       )}
     </>
   );

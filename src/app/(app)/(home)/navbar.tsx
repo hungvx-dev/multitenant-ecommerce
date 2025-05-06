@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Poppins } from "next/font/google";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { MenuIcon } from "lucide-react";
+import { useState } from 'react';
+import { Poppins } from 'next/font/google';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { MenuIcon } from 'lucide-react';
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { NavbarSidebar } from "./navbar-sidebar";
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { NavbarSidebar } from './navbar-sidebar';
 
 const poppins = Poppins({
-  subsets: ["latin"],
-  weight: "700",
+  subsets: ['latin'],
+  weight: '700',
 });
 
 type NavbarItemProps = {
@@ -25,8 +25,8 @@ const NavbarItem = ({ children, href, isActive }: NavbarItemProps) => {
   return (
     <Button
       asChild
-      variant={isActive ? "default" : "outline"}
-      className={cn(isActive || "hover:border-primary border-transparent shadow-none")}
+      variant={isActive ? 'default' : 'outline'}
+      className={cn(isActive || 'hover:border-primary border-transparent shadow-none')}
     >
       <Link href={href}>{children}</Link>
     </Button>
@@ -34,11 +34,11 @@ const NavbarItem = ({ children, href, isActive }: NavbarItemProps) => {
 };
 
 const navbarItems = [
-  { href: "/", children: "Home" },
-  { href: "/about", children: "About" },
-  { href: "/features", children: "Features" },
-  { href: "/pricing", children: "Pricing" },
-  { href: "/contact", children: "Contact" },
+  { href: '/', children: 'Home' },
+  { href: '/about', children: 'About' },
+  { href: '/features', children: 'Features' },
+  { href: '/pricing', children: 'Pricing' },
+  { href: '/contact', children: 'Contact' },
 ];
 
 export const Navbar = () => {
@@ -48,7 +48,7 @@ export const Navbar = () => {
   return (
     <div className="flex h-20 justify-between border-b bg-white px-6 font-medium">
       <Link href="/" className="flex items-center">
-        <span className={cn("text-5xl font-semibold", poppins.className)}>funroad</span>
+        <span className={cn('text-5xl font-semibold', poppins.className)}>funroad</span>
       </Link>
 
       <NavbarSidebar items={navbarItems} open={isSidebarOpen} onOpenChange={setIsSidebarOpen} />

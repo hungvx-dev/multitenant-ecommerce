@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { Suspense } from "react";
-import { useSuspenseQuery } from "@tanstack/react-query";
+import { Suspense } from 'react';
+import { useSuspenseQuery } from '@tanstack/react-query';
 
-import { useTRPC } from "@/trpc/client";
-import Catagories from "./categories";
-import SearchInput from "./search-input";
+import { useTRPC } from '@/trpc/client';
+import Catagories from './categories';
+import SearchInput from './search-input';
 
 const SearchFilters = () => {
   const trpc = useTRPC();
