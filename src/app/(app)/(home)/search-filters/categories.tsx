@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 
-import type { CategoriesGetMany } from "@/modules/categories/server/types";
-import CategoryDropdown from "./category-dropdown";
+import type { CategoriesGetMany } from '@/modules/categories/server/types';
+import CategoryDropdown from './category-dropdown';
 
 type Props = {
   data: CategoriesGetMany;
 };
 
 const Categories = ({ data }: Props) => {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState('all');
 
   return (
     <div className="flex flex-wrap gap-2">
